@@ -1,0 +1,48 @@
+{
+  "rooms" : {
+    "81cvSy" : {
+      "room_name" : "Two-person meeting room",
+      "size" : 2,
+      "amenities" : [
+        "8V19ze", "9VNMkLD", "f8O7"
+      ],
+      "hourly_rate" : 150,
+      "photo" : "photos/photo-4.jpg"
+    },
+    "Ii8f7PWJ" : {
+      "room_name" : "Four-person meeting room",
+      "size" : 4,
+      "amenities" : [
+        "gI6P3", "9VNMkLD", "EA4eGZ", "8V19ze"
+      ],
+      "hourly_rate" : 250,
+      "photo" : "photos/photo-5.jpg"
+    },
+    "6ncBqW8T" : {
+      "room_name" : "Six-person meeting room",
+      "size" : 6,
+      "amenities" : [
+        "gI6P3", "9VNMkLD", "EA4eGZ", "8V19ze", "f8O7"
+      ],
+      "hourly_rate" : 300,
+      "photo" : "photos/photo-6.jpg"
+    }
+  },
+  "amenities" : {
+    "8V19ze" : {
+      "name" : "TV"
+    },
+    "9VNMkLd" : {
+      "name" : "Coffee and Tea"
+    },
+    "gI6P3" : {
+      "name" : "Whiteboard"
+    },
+    "EA4eGZ" : {
+      "name" : "Stationary"
+    },
+    "f8O7" : {
+      "name" : "Conference Phone"
+    }
+  }
+}

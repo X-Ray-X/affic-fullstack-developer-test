@@ -1,0 +1,46 @@
+[
+  {
+    "id" : "two-person-room",
+    "room" : {
+      "name" : "Spacious two-person meeting room",
+      "capacity" : 2,
+      "amenities" : [
+        "Tea and Coffee", "TV"
+      ]
+    },
+    "prices" : {
+      "daily" : 500,
+      "hourly" : 100
+    },
+    "photo" : "photos/photo-1.jpg"
+  },
+  {
+    "id" : "four-person-room",
+    "room" : {
+      "name" : "Four-person meeting room",
+      "capacity" : 4,
+      "amenities" : [
+        "Tea and Coffee", "TV", "Whiteboard", "Phone"
+      ]
+    },
+    "prices" : {
+      "daily" : 800,
+      "hourly" : 200
+    },
+    "photo" : "photos/photo-2.jpg"
+  },
+  {
+    "id" : "six-person-room",
+    "room" : {
+      "name" : "Six-person room",
+      "capacity" : 6,
+      "amenities" : [
+        "Tea and Coffee", "TV", "Phone"
+      ]
+    },
+    "prices" : {
+      "hourly" : 300
+    },
+    "photo" : "photos/photo-3.jpg"
+  }
+]
