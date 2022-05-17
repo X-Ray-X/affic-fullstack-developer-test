@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft/2019-09/schema",
+    "$id": "http://api.example.com/pms2-schema.json",
+    "type": "object",
+    "properties": {
+        "rooms": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z0-9]+$": {
+                    "type": "object",
+                    "properties": {
+                        "room_name": {
+                            "type": "string"
+                        },
+                        "size": {
+                            "type": "integer"
+                        },
+                        "amenities": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "hourly_rate": {
+                            "type": "integer"
+                        },
+                        "photo": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "room_name",
+                        "size",
+                        "amenities",
+                        "hourly_rate",
+                        "photo"
+                    ]
+                }
+            }
+        },
+        "amenities": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z0-9]+$": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ]
+                }
+            }
+        }
+    },
+    "required": [
+        "rooms",
+        "amenities"
+    ]
+}
