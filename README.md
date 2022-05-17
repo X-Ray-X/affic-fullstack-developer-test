@@ -31,3 +31,22 @@ For more please check the contents of Makefile.
 Feel free to import the Postman collection included in the root of the repository:
 
 > affic-fullstack-developer-test.postman_collection.json
+
+### Database access:
+
+Use the following credentials in a database client of your choice:
+
+> DB_HOST: pgsql \
+> DB_PORT:5432 \
+> DB_DATABASE: affic_fullstack_developer_test \
+> DB_USERNAME:sail \
+> DB_PASSWORD: password
+
+## Extending the request normalisation interface:
+
+- Create a new JSON Schema file in **_App\Libraries\Integrations\Schemas_** 
+- Add a new entry to the schema dictionary class in **_App\Libraries\Integrations\SchemaDictionary.php_**
+  - (this will be automatically loaded to the schema validator class)
+- Create a Transformer class in order to map external request properties to the common database schema - **_App\Libraries\Integrations\Transformers_**
+- Provide a new match between the transformer and a schema vendor in **_App\Libraries\Integrations\RequestTransformerFactory.php_**
+- **Enjoy.**
