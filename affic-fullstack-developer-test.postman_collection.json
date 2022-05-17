@@ -20,12 +20,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/api/callback",
+					"raw": "localhost/api/v1/callback",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"api",
+						"v1",
 						"callback"
 					]
 				}
@@ -47,13 +48,60 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/api/callback",
+					"raw": "localhost/api/v1/callback",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"api",
+						"v1",
 						"callback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/v1/rooms/?page=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rooms",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-room-by-external-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/v1/rooms/two-person-room",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rooms",
+						"two-person-room"
 					]
 				}
 			},

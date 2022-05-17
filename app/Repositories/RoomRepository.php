@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Helpers\StorageHelper;
 use App\Models\Room;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\MessageBag;
 
 class RoomRepository implements RoomRepositoryInterface
@@ -30,7 +32,7 @@ class RoomRepository implements RoomRepositoryInterface
                     'photo' => StorageHelper::saveBase64Image($room['photo'], $room['external_id']),
                 ]);
 
-                $report->add($room['external_id'], "Record updated: " . ($result ? 'true' : 'false'));
+                $report->add($room['external_id'], ($result ? 'Record updated.' : 'Record update failed.'));
 
                 continue;
             }
@@ -46,9 +48,28 @@ class RoomRepository implements RoomRepositoryInterface
                 'photo' => StorageHelper::saveBase64Image($room['photo'], $room['external_id']),
             ]);
 
-            $report->add($room['external_id'], "Record created: " . ($result ? 'true' : 'false'));
+            $report->add($room['external_id'], $result ? 'Record created.' : 'Record creation failed.');
         }
 
         return $report;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getAll(): Collection
+    {
+        return Room::all();
+    }
+
+    /**
+     * @param string $externalId
+     * @return Room
+     *
+     * @throws ModelNotFoundException
+     */
+    public function getRoomByExternalId(string $externalId): Room
+    {
+        return Room::where('external_id', $externalId)->firstOrFail();
     }
 }

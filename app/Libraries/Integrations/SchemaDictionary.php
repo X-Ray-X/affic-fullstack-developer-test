@@ -10,13 +10,13 @@ class SchemaDictionary
     const MAP = [
         [
             'vendor' => self::VENDOR_PMS1,
-            'id' => 'http://api.example.com/pms1-schema.json',
-            'file' => '/var/www/html/app/Libraries/Integrations/Schemas/pms1-schema.json'
+            'id' => 'http://api.example.com/Pms1SchemaConfig.json',
+            'file' => '/var/www/html/app/Libraries/Integrations/Schemas/Pms1SchemaConfig.json'
         ],
         [
             'vendor' => self::VENDOR_PMS2,
-            'id' => 'http://api.example.com/pms2-schema.json',
-            'file' => '/var/www/html/app/Libraries/Integrations/Schemas/pms2-schema.json'
+            'id' => 'http://api.example.com/Pms2SchemaConfig.json',
+            'file' => '/var/www/html/app/Libraries/Integrations/Schemas/Pms2SchemaConfig.json'
         ]
     ];
 }

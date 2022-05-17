@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CallbackController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('normalize.request.schema')->post('/callback', [CallbackController::class, 'callback']);
+Route::prefix('v1')->group(function () {
+    Route::middleware('normalize.request.schema')->post('/callback', [CallbackController::class, 'callback']);
+    Route::get('/rooms', [RoomController::class, 'index']);
+    Route::get('/rooms/{externalId}', [RoomController::class, 'get']);
+});
+
+
