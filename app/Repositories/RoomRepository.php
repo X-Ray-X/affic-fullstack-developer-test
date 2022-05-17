@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Helpers\StorageHelper;
 use App\Models\Room;
 use Illuminate\Support\MessageBag;
 
@@ -26,7 +27,7 @@ class RoomRepository implements RoomRepositoryInterface
                     'amenities' => $room['amenities'],
                     'hourly_rate' => $room['hourly_rate'],
                     'daily_rate' => $room['daily_rate'],
-                    'photo' => $room['photo'],
+                    'photo' => StorageHelper::saveBase64Image($room['photo'], $room['external_id']),
                 ]);
 
                 $report->add($room['external_id'], "Record updated: " . ($result ? 'true' : 'false'));
@@ -42,7 +43,7 @@ class RoomRepository implements RoomRepositoryInterface
                 'amenities' => $room['amenities'],
                 'hourly_rate' => $room['hourly_rate'],
                 'daily_rate' => $room['daily_rate'],
-                'photo' => $room['photo'],
+                'photo' => StorageHelper::saveBase64Image($room['photo'], $room['external_id']),
             ]);
 
             $report->add($room['external_id'], "Record created: " . ($result ? 'true' : 'false'));
