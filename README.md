@@ -42,6 +42,19 @@ Use the following credentials in a database client of your choice:
 > DB_USERNAME:sail \
 > DB_PASSWORD: password
 
+### Laravel IDE Helper usage:
+
+Hinting for models:
+> php artisan ide-helper:models \
+> php artisan ide-helper:models --reset 
+
+Use --reset option to replace whole phpdoc block in models. 
+Code hinting for facades methods:
+> php artisan ide-helper:generate
+
+Code hinting for classes called through containers: 
+> php artisan ide-helper:meta
+
 ## Extending the request normalisation interface:
 
 - Create a new JSON Schema file in **_App\Libraries\Integrations\Schemas_** 

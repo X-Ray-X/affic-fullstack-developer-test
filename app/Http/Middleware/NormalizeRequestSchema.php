@@ -14,11 +14,12 @@ use Opis\JsonSchema\Validator;
 class NormalizeRequestSchema
 {
     /**
-     * Handle an incoming request.
+     * Handles JSON Schema validation and normalizes the request body based on the vendor's schema config.
      *
      * @param Request $request
      * @param Closure $next
      * @return mixed
+     * @throws \Exception
      */
     public function handle(Request $request, Closure $next)
     {

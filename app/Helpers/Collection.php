@@ -8,6 +8,8 @@ use Illuminate\Support\Collection as BaseCollection;
 class Collection extends BaseCollection
 {
     /**
+     * Extends the built-in Collection class with missing pagination functionality.
+     *
      * @param int $perPage
      * @param int|null $total
      * @param int|null $page
