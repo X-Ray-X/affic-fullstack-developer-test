@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Http\Controllers;
 
 use Illuminate\Support\MessageBag;
 use Mockery;

@@ -23,6 +23,7 @@ class RoomIndexTransformer extends TransformerAbstract
                 'id' => $room->external_id,
                 'name' => $room->name,
                 'photo' => $room->photo,
+                'size' => $room->size,
             ];
         }
 

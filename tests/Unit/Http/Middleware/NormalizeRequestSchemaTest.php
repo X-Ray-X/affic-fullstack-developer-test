@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Http\Middleware;
 
 use App\Http\Middleware\NormalizeRequestSchema;
 use Symfony\Component\HttpFoundation\Response;

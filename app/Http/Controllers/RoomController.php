@@ -33,7 +33,7 @@ class RoomController extends Controller
             Response::HTTP_OK,
             (new RoomIndexTransformer)
                 ->transform($rooms)
-                ->paginate(5)
+                ->paginate(99)
                 ->jsonSerialize());
     }
 

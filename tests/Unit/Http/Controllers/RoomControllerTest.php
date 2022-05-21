@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Http\Controllers;
 
 use App\Http\Controllers\RoomController;
 use App\Models\Room;

@@ -1,5 +1,7 @@
 # Affic Fullstack Developer Test
 
+The original requirements for this assignment can be found in the **__affic_** folder.
+
 ## Prerequisites:
 * [Docker](https://docs.docker.com/get-docker/)
 
@@ -9,7 +11,7 @@
 
 > 127.0.0.1 pgsql
 
-Please note the project is configured under the default 'localhost' domain.
+Please note the project is configured under the default http://localhost domain for the frontend and you can access the API at http://localhost/api/v1/.
 
 ### Run the command from project's root catalog:
 
@@ -20,19 +22,25 @@ Please note the project is configured under the default 'localhost' domain.
 > make up \
 > make down
 
-### Testing:
+### Manual testing via Postman
+
+Feel free to import the Postman collection included in the root of the repository (as photos require base64 encoding):
+
+> affic-fullstack-developer-test.postman_collection.json
+
+### Editing the frontend
+
+In order to see effects of changes made on the frontend, please remember to refresh the Vue.js build:
+
+> make build-frontend
+
+### Testing
 
 > make test
 
 For more please check the contents of Makefile.
 
-### Manual testing via Postman:
-
-Feel free to import the Postman collection included in the root of the repository:
-
-> affic-fullstack-developer-test.postman_collection.json
-
-### Database access:
+### Database access
 
 Use the following credentials in a database client of your choice:
 
@@ -42,7 +50,7 @@ Use the following credentials in a database client of your choice:
 > DB_USERNAME:sail \
 > DB_PASSWORD: password
 
-### Laravel IDE Helper usage:
+### Laravel IDE Helper usage
 
 Hinting for models:
 > php artisan ide-helper:models \
@@ -62,4 +70,4 @@ Code hinting for classes called through containers:
   - (this will be automatically loaded to the schema validator class)
 - Create a Transformer class in order to map external request properties to the common database schema - **_App\Libraries\Integrations\Transformers_**
 - Provide a new match between the transformer and a schema vendor in **_App\Libraries\Integrations\RequestTransformerFactory.php_**
-- **Enjoy.**
+- Enjoy.

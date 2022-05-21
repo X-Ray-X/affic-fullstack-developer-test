@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use Gumlet\ImageResize;
+use Gumlet\ImageResizeException;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class StorageHelper
@@ -24,9 +27,23 @@ class StorageHelper
 
         $fileExtension = explode('/', $mimeType);
 
-        $imagePath = 'public/' . $pathPrefix . $fileName . '.' . $fileExtension[1];
+        $imagePath = 'storage/' . $pathPrefix . $fileName . '.' . $fileExtension[1];
 
         Storage::put($imagePath, $imageData);
+
+        try {
+            $imageResize = new ImageResize($imagePath);
+            $imageResize->crop(
+                env('IMAGE_CROP_SIZE_WIDTH', 1920),
+                env('IMAGE_CROP_SIZE_HEIGHT', 1080),
+                env('IMAGE_ALLOW_ENLARGE', true))
+            ;
+            $imageResize->save($imagePath);
+        } catch (ImageResizeException $exception) {
+            Log::error($exception->getMessage(), [
+                'image' => $imagePath,
+            ]);
+        }
 
         return $imagePath;
     }
